@@ -3,8 +3,8 @@ int main();
 void gotoxy(int x, int y);
 void press_any();//아무키나 누르면 메뉴로
 void press_any_out(void);//설명화면에서 넘어가기
-//void move(int type);
-//void phone();
+void move(int type);
+void phone();
 int out();
 class gamemain {
 public:
@@ -47,7 +47,6 @@ public:
 			cout << i1[0] << i1[iconnum];
 		else
 			cout << i1[iconnum];
-
 		Sleep(35);
 
 	}//스페이스바로 상하 조정
@@ -82,24 +81,22 @@ public:
 		int line = 0;
 		int color;
 		int score = 0;
-		
+
 		srand((unsigned int)time(NULL));
 		while (1) {
 			int firstlinex = 60;
-			SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 7);
+			SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 7);//틀을 하얀색으로 지정
 			gotoxy(35, 3);
 			cout << "점수 : " << score << " 개";
-
-			SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 7);//틀을 하얀색으로 지정
 			phone();
 
 			line = rand() % 24 + 1;//길이
-			int liney = line;
+
 			int lineline[30] = {};
 			for (int i = 0; i <= line; i++) {
 				lineline[i] = 0;
 			}
-			for (int i = line+1 ; i < line + 6; i++) {
+			for (int i = line + 1; i < line + 6; i++) {
 				lineline[i] = 1;
 			}
 			for (int i = line + 6; i < 30; i++) {
@@ -121,9 +118,11 @@ public:
 					}
 				}
 				move(mainfr);
-				if (movey > 34 || movey < 6)press_any();
-				if (firstlinex-2 == movex) {
-					if (lineline[movey - 5] != 1) {press_any(); }
+				if (movey > 34 || movey < 6)
+					press_any();
+				if (firstlinex - 2 == movex) {
+					if (lineline[movey - 5] == 0) { press_any(); }
+					//if (lineline[movey] == 0) { press_any(); }
 				}
 
 				for (int i = 0; i < 30; i++) {
@@ -218,7 +217,7 @@ public:
 			}
 		}
 		system("cls");
-		
+
 	}
 	void colorchoose() {
 		system("cls");
@@ -248,7 +247,7 @@ public:
 					if (triy > 12) {
 						gotoxy(trix, triy);
 						cout << " ";
-						gotoxy(trix, triy -=1);
+						gotoxy(trix, triy -= 1);
 						cout << "▷";
 					}
 					else {
@@ -260,7 +259,7 @@ public:
 					if (triy < 19) {
 						gotoxy(trix, triy);
 						cout << " ";
-						gotoxy(trix, triy +=1);
+						gotoxy(trix, triy += 1);
 						cout << "▷";
 					}
 					else {
@@ -292,7 +291,7 @@ public:
 	void game() {
 		int trix = 20, triy = 15;
 		system("cls");
-		
+
 		gotoxy(24, 15);
 		cout << "1. ↑(아래에서 위로)";
 		gotoxy(24, 17);
@@ -401,10 +400,20 @@ public:
 };
 class file {
 public:
+	/*void bscore(int bbestscore) {
+
+		ifstream input("bestscore.txt");
+		int n;
+		input >> n;
+		input.close();
+		ofstream sco;
+		sco.open("bestscore.txt");
+		if (n <= bbestscore) { sco << bbestscore; }
+		return;
+	}*/
 	void confirm() {
 		string name;
 		system("cls");
-
 		gotoxy(20, 15);
 		cout << "점수 : " << bestscore1 << endl;
 		gotoxy(20, 17);
@@ -446,15 +455,13 @@ public:
 };
 int main() {
 	system("cls");
-	int triy=17;
+	int triy = 17;
 	int trix = 20;
 	ifstream input("bestscore.txt");
 	int n;
 	input >> n;
 	input.close();
-	gotoxy(23, 10);
-	cout << "【n】【e】【x】【t】【B】";
-	gotoxy(24, 12);
+	gotoxy(24, 10);
 	cout << "최고 점수 : " << n << "개";
 	gotoxy(24, 15);
 	cout << "1. 게임 시작";
@@ -506,7 +513,8 @@ int main() {
 					exit(0);
 				}
 			}
-		}	
+		}
+
 	}
 	system("cls");
 	return 0;
@@ -518,9 +526,10 @@ void press_any() {
 	input.close();
 	if (n <= bestscore2) {
 		ofstream sco;
-		sco.open("bestscore.txt"); 
-		sco << bestscore2; }
-	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 7);//
+		sco.open("bestscore.txt");
+		sco << bestscore2;
+	}
+
 	gotoxy(20, 39);
 	cout << "[esc] 버튼을 누르면 인증서 발급";
 	gotoxy(20, 40);
@@ -529,14 +538,14 @@ void press_any() {
 
 	movey = 20;
 	int key;
-	
+
 	file f;
 	//f.bscore(bestscore2);
 	while (true) {
 		if (kbhit()) {
-			
+
 			key = getch();
-			if (key == 27) {  f.confirm(); }
+			if (key == 27) { f.confirm(); }
 			else if (key == 13) main();
 			else continue;
 		}
