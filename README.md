@@ -25,3 +25,19 @@ ifstream input("bestscore.txt");
 		sco.open("bestscore.txt"); 
 		sco << bestscore2; }
 ```
+----------
+## schedule
+**2019-04-01~** <br>Planning what I will do<br>
+**2019-05-01~** <br>Developing with C language <br>
+                used my knowledge that I learned at vacation academy<br>
+                make a frame and main screen<br>
+**2019-06-01~** <br>make a main game source <br>
+		hardest thing was emoji and line move at the same time<br>
+		I'm a bit awkward when run because I didn't learn about threads in C ++.<br>
+**2019-08-01~** <br>Add setting<br>
+		Settings can change the shape and color of emoji<br>
+		Disunite the header(stdio, global variable)<br>
+**2019-11-01~** <br>change the source into C++<br>
+		put function to class<br>
+		add file stream<br>
+**2019-12-05~** <br>final presentation
