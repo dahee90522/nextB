@@ -16,14 +16,15 @@ The reason that I choose this game is just I like that game.
 >    - certificate is including your name(nickname) and your score
 > - This code will record your best score ↓↓↓
 ```C++
-ifstream input("bestscore.txt");
-	int n;
-	input >> n;
-	input.close();
-	if (n <= bestscore2) {
-		ofstream sco;
-		sco.open("bestscore.txt"); 
-		sco << bestscore2; }
+ifstream input("bestscore.txt");//file open
+int n;
+input >> n;
+input.close();
+if (n <= bestscore2) {//compare score 
+	ofstream sco;
+	sco.open("bestscore.txt"); //open file
+	sco << bestscore2; //put bestscore into file
+}
 ```
 ----------
 ## schedule
@@ -41,3 +42,5 @@ ifstream input("bestscore.txt");
 		put function to class<br>
 		add file stream<br>
 **2019-12-05~** _<br>final presentation_   
+
+----------
