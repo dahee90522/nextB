@@ -27,17 +27,17 @@ ifstream input("bestscore.txt");
 ```
 ----------
 ## schedule
-**2019-04-01~** <br>Planning what I will do<br>
-**2019-05-01~** <br>Developing with C language <br>
+**2019-04-01~** _<br>Planning what I will do_   
+**2019-05-01~** _<br>Developing with C language_   
                 used my knowledge that I learned at vacation academy<br>
                 make a frame and main screen<br>
-**2019-06-01~** <br>make a main game source <br>
+**2019-06-01~** _<br>make a main game source_   
 		hardest thing was emoji and line move at the same time<br>
 		I'm a bit awkward when run because I didn't learn about threads in C ++.<br>
-**2019-08-01~** <br>Add setting<br>
+**2019-08-01~** _<br>Add setting_   
 		Settings can change the shape and color of emoji<br>
 		Disunite the header(stdio, global variable)<br>
-**2019-11-01~** <br>change the source into C++<br>
+**2019-11-01~** _<br>change the source into C++_   
 		put function to class<br>
 		add file stream<br>
-**2019-12-05~** <br>final presentation
+**2019-12-05~** _<br>final presentation_   
