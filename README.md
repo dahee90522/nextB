@@ -1,7 +1,7 @@
 ## this is my C++ 1 year project
 I use 
 
-This is the <u>consol game</u> that moving the emoji by clicking the **space bar** <br>
+This is the <u>consol game</u> that moving the emoji by press the **space bar** <br>
 When I started this project I developed this file using **C language**.<br>
 After half year I developed again to use **C++ language**.
 
