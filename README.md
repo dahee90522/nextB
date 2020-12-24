@@ -3,7 +3,7 @@ I use
 
 This is the <u>consol game</u> that moving the emoji by press the **space bar** <br>
 When I started this project I developed this file using **C language**.<br>
-After half year I developed again to use **C++ language**.
+After half year I developed again with **C++ language**.
 
 
 I created this project by referring to the game called ***Amazing Wire***.  
