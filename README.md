@@ -11,7 +11,7 @@ The reason that I choose this game is just I like that game.
 
 > **About this game's function:**
 
-> - You can choose imoji and imoji color
+> - You can choose emoji and emoji color
 > - You can choose the type that where will the emoji go when you clicking the space bar
 > - You can get the certificate when you finish the game 
 >    - certificate is including your name(nickname) and your score
